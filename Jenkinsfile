@@ -8,12 +8,7 @@ pipeline {
     timeout(time: 2, unit: 'MINUTES')
   }
 
-  stages {
-    stage('Install dependencies') {
-      steps {
-        sh 'npm t'
-      }
-    }
+
     stage('Run tests') {
       steps {
         sh 'npm t'
