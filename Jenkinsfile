@@ -19,5 +19,10 @@ pipeline {
         sh 'npm t'
       }
     }
+    stage('Run parametized'){
+        steps{
+            build job: 'parameterized', parameters: [string(name: 'ROOT_ID', value: '$BUILD_NUMBER')]
+        }
+    }
   }
 }
